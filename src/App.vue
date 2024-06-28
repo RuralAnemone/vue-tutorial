@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const text = ref('')
 setInterval(() => {
-  text += "h"
+  text.value += "h"
 }, 1000)
 </script>
 
