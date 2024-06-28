@@ -1,13 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 
-const text = ref('')
-setInterval(() => {
-  text.value += "h"
-}, 1000)
+const awesome = ref(true)
+
+function toggle() {
+  // ...
+}
 </script>
 
 <template>
-  <input v-model="text" placeholder="Type here">
-  <p>{{ text }}</p>
+  <button @click="toggle">Toggle</button>
+  <h1>Vue is awesome!</h1>
+  <h1>Oh no 😢</h1>
 </template>
