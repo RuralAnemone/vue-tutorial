@@ -2,6 +2,9 @@
 import { ref } from 'vue'
 
 const text = ref('')
+setInterval(() => {
+  text += "h"
+}, 1000)
 </script>
 
 <template>
