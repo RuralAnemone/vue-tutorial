@@ -1,10 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 
-// component logic
-// declare some reactive state here.
+const message = ref("hello world")
+console.log(message)
+// message.value = "hello mars"
 </script>
 
 <template>
-  <h1>Make me dynamic!</h1>
+  <h1>{{ message }}</h1>
 </template>
