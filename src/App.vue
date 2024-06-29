@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from '@vue/reactivity';
 import { ref } from 'vue'
 
 let id = 0
@@ -19,6 +20,12 @@ function addTodo() {
 function removeTodo(todo) {
   todos.value = todos.value.filter((t) => t !== todo)
 }
+
+const filteredTodos = computed(() => {
+  hideCompleted
+  ? todos.value.filter(t => t.done)
+  : todos.value
+})
 </script>
 
 <template>
@@ -27,7 +34,7 @@ function removeTodo(todo) {
     <button>Add Todo</button>
   </form>
   <ul>
-    <li v-for="todo in todos" :key="todo.id">
+    <li v-for="todo in filteredTodos" :key="todo.id">
       <input type="checkbox" v-model="todo.done">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
       <button @click="removeTodo(todo)">X</button>
