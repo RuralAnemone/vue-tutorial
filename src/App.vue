@@ -4,7 +4,10 @@ import JSConfetti from 'js-confetti'
 const confetti = new JSConfetti()
 
 function showConfetti() {
-  confetti.addConfetti()
+  // confetti.addConfetti()
+  confetti.addConfetti({
+    confettiNumber: 10000
+  })
 }
 
 showConfetti()
